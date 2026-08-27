@@ -35,9 +35,8 @@ public class userService {
         if (usuarioExistente != null) {
             usuarioExistente.setNome(usuarioAtualizado.getNome());
             usuarioExistente.setEmail(usuarioAtualizado.getEmail());
-            // Atualize outros campos conforme necessário
             return UserRepository.save(usuarioExistente);
         }
-        return null; // Retorna null se o usuário não for encontrado
+        return null;
     }
 }
