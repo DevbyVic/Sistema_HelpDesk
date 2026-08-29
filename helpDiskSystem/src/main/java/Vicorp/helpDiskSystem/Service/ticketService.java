@@ -15,12 +15,16 @@ public class ticketService {
         this.TicketRepository = TicketRepository;
     }
 
-    public void criarTicket(ticket Ticket){
-        TicketRepository.save(Ticket);
+    public ticket criarTicket(ticket Ticket){
+        return TicketRepository.save(Ticket);
     }
 
     public List<ticket> listarTodos() {
         return TicketRepository.findAll();
+    }
+
+    public ticket buscarTicketId(Long id) {
+        return TicketRepository.findById(id).orElse(null);
     }
 
     public ticket atualizarStatusTicket(Long id, Status statusAtualizado) {
