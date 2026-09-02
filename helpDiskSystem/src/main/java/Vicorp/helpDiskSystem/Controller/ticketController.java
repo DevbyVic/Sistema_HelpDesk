@@ -39,7 +39,7 @@ public class ticketController {
         return TicketService.criarTicket(Ticket);
     }
 
-    @PutMapping("./{id}")
+    @PutMapping("/{id}")
     public ticket atualizarStatusTicket(
         @PathVariable Long id,
         @RequestParam("status") Status statusAtualizado) {

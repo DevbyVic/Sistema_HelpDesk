@@ -14,13 +14,13 @@ public class ticket {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToMany
+    @ManyToOne
     @JoinColumn(name = "customer_id", nullable = false)
-    private users Customer;
+private users customer;
 
-    @ManyToMany
+    @ManyToOne
     @JoinColumn(name = "agent_id", nullable = false)
-    private users agent;
+private users agent;
 
     private String titulo;
     private String descrição;
@@ -35,7 +35,7 @@ public class ticket {
         this.descrição = descrição;
         this.titulo = titulo;
         this.agent = agent;
-        Customer = customer;
+        this.customer = customer;
         this.id = id;
     }
 
@@ -48,11 +48,11 @@ public class ticket {
     }
 
     public users getCustomer() {
-        return Customer;
+        return customer;
     }
 
     public void setCustomer(users customer) {
-        Customer = customer;
+        this.customer = customer;
     }
 
     public users getAgent() {
