@@ -16,11 +16,11 @@ public class ticket {
 
     @ManyToOne
     @JoinColumn(name = "customer_id", nullable = false)
-private users customer;
+    private users customer;
 
     @ManyToOne
     @JoinColumn(name = "agent_id", nullable = false)
-private users agent;
+    private users agent;
 
     private String titulo;
     private String descrição;
